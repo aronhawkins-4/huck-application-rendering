@@ -18,3 +18,4 @@ A starter template for React Three Fiber that includes enough commonly used elem
 
 1. pnpm install
 2. pnpm start
+# huck-application-rendering
