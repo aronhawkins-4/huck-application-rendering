@@ -1,51 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, shrink-to-fit=0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-        />
-        <title>RTF Starter Template</title>
-        <style>
-            /* Most resets from https://www.joshwcomeau.com/css/custom-css-reset/ */
-            * {
-                margin: 0;
-            }
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-            }
-            img,
-            picture,
-            video,
-            canvas,
-            svg {
-                display: block;
-                max-width: 100%;
-            }
-            input,
-            button,
-            textarea,
-            select {
-                font: inherit;
-            }
-            html,
-            body {
-                width: 100%;
-                height: 100%;
-                -webkit-font-smoothing: antialiased;
-            }
-            #canvas {
-                width: 100%;
-                height: 100%;
-                background-color: rgb(22, 36, 36);
-            }
-        </style>
-    </head>
-    <body>
-        <div id="canvas"></div>
-        <script src="./index.js" type="module"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, shrink-to-fit=0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Huck Application Rendering</title>
+    <link href="globals.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+      /* Most resets from https://www.joshwcomeau.com/css/custom-css-reset/ */
+      * {
+        margin: 0;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        -webkit-font-smoothing: antialiased;
+      }
+      #canvas {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(22, 36, 36);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas"></div>
+    <!-- <div class="content swiper">
+      <div class="swiper-wrapper">
+        <div class="callout-screen swiper-slide">
+          <div class="callout solar">
+            <div class="callout-content">
+              <div class="callout-line-container">
+                <div class="callout-line"></div>
+              </div>
+              <h2>Small Bobtail</h2>
+              <p>
+                Providing five times the fatigue life of conventional fasteners, the Huck Bobtail is ideal for applications that require vibration resistance and measurable, consistent clamp and shear
+                values. Quick, easy installation also means less training time and more consistent fastening of joints across the entire application.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="callout-screen swiper-slide"></div>
+        <div class="callout-screen swiper-slide"></div>
+      </div>
+      <div class="swiper-navigation">
+        <div class="swiper-navigation-arrow swiper-navigation-arrow_prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path
+              d="M4.80967 20.7967L4 19.987L4.80967 19.1774L16.8473 7.13975L17.657 6.33008L19.2763 7.94942L18.4666 8.7591L8.38513 18.8406H34.8536H36V21.1335H34.8536H8.38513L18.4666 31.215L19.2763 32.0247L17.657 33.644L16.8473 32.8343L4.80967 20.7967Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+        <div class="swiper-navigation-arrow swiper-navigation-arrow_next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path
+              d="M35.1903 20.7967L36 19.987L35.1903 19.1774L23.1527 7.13975L22.343 6.33008L20.7237 7.94942L21.5334 8.7591L31.6149 18.8406H5.14644H4V21.1335H5.14644H31.6149L21.5334 31.215L20.7237 32.0247L22.343 33.644L23.1527 32.8343L35.1903 20.7967Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div> -->
+
+    <script src="./index.js" type="module"></script>
+    <!--
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        //     const swiper = new Swiper('.swiper', {
+        //       direction: 'vertical',
+        //       rewind: true,
+        //       effect: 'fade',
+        //       navigation: {
+        //         prevEl: '.swiper-navigation-arrow_prev',
+        //         nextEl: '.swiper-navigation-arrow_next',
+        //       },
+        //       pagination: {
+        //         el: '.swiper-pagination',
+        //         clickable: true,
+        //         renderBullet: function (index, className) {
+        //           return '<div class="' + className + '"><span class="swiper-pagination-bullet-text">View ' + (index + 1) + '</span><div class="swiper-pagination-bullet-marker"></div></div>';
+        //         },
+        //       },
+        //     });
+        //     console.log(document.getElementById('canvas'));
+      });
+    </script>
+  </body>
 </html>
