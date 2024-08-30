@@ -19,9 +19,17 @@ const Container = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeScene, setActiveScene] = useState(0);
   useEffect(() => {
-    console.log(activeIndex);
-    console.log(activeScene);
-  }, [activeIndex, activeScene]);
+    if (activeScene < 0) {
+      setActiveScene(2);
+    }
+    if (activeScene > 2) {
+      setActiveScene(0);
+    }
+  }, [activeScene]);
+
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [activeScene]);
   return (
     <>
       <Canvas camera={{ fov: 60, near: 0.1, far: 1000, position: [8, 2, 12] }} ref={canvasRef}>
@@ -218,24 +226,21 @@ const Container = () => {
       </div>
       <div className='swiper-pagination scene-pagination'>
         <div
-          className='swiper-pagination-bullet'
+          className={`swiper-pagination-bullet ${activeScene === 0 && 'active'}`}
           onClick={() => {
             setActiveScene(0);
-            setActiveIndex(0);
           }}
         ></div>
         <div
-          className='swiper-pagination-bullet'
+          className={`swiper-pagination-bullet ${activeScene === 1 && 'active'}`}
           onClick={() => {
             setActiveScene(1);
-            setActiveIndex(0);
           }}
         ></div>
         <div
-          className='swiper-pagination-bullet'
+          className={`swiper-pagination-bullet ${activeScene === 2 && 'active'}`}
           onClick={() => {
             setActiveScene(2);
-            setActiveIndex(0);
           }}
         ></div>
       </div>
@@ -248,7 +253,13 @@ const Container = () => {
           onClick={(e) => {
             e.preventDefault();
             if (swiperRef.current) {
-              swiperRef.current.swiper.slidePrev();
+              if (activeIndex === 0) {
+                setActiveScene((current) => {
+                  return current - 1;
+                });
+              } else {
+                swiperRef.current.swiper.slidePrev();
+              }
             }
           }}
         >
@@ -266,7 +277,13 @@ const Container = () => {
           onClick={(e) => {
             e.preventDefault();
             if (swiperRef.current) {
-              swiperRef.current.swiper.slideNext();
+              if (activeIndex === swiperRef.current.swiper.slides.length - 1) {
+                setActiveScene((current) => {
+                  return current + 1;
+                });
+              } else {
+                swiperRef.current.swiper.slideNext();
+              }
             }
           }}
         >
