@@ -8,14 +8,14 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 import SolarFile from '../../public/Solar.glb';
 
 export function Solar(props) {
-  const group = React.useRef();
+  // const group = React.useRef();
   const { nodes, materials, animations } = useGLTF(SolarFile);
-  const { actions } = useAnimations(animations, group);
+  // const { actions } = useAnimations(animations, group);
   return (
-    <group ref={group} {...props} dispose={null} scale={2} rotation={[0, Math.PI / 3.25, 0]}>
+    <group ref={props.refs} {...props} dispose={null} scale={2} rotation={[0, Math.PI / 3.25, 0]}>
       <group name='Scene'>
-        <mesh name='solar_panels002' geometry={nodes.solar_panels002.geometry} material={materials['pbr ']} position={[0.097, 0.002, -0.001]} />
-        <mesh name='solar_panels006' geometry={nodes.solar_panels006.geometry} material={materials['pbr ']} position={[-0.831, 2.084, 0.179]} rotation={[0.808, 0, 0]} />
+        <mesh castShadow receiveShadow name='solar_panels002' geometry={nodes.solar_panels002.geometry} material={materials['pbr ']} position={[0.097, 0.002, -0.001]} />
+        <mesh castShadow receiveShadow name='solar_panels006' geometry={nodes.solar_panels006.geometry} material={materials['pbr ']} position={[-0.831, 2.084, 0.179]} rotation={[0.808, 0, 0]} />
       </group>
     </group>
   );

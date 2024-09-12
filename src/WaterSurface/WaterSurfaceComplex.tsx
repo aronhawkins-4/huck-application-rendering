@@ -6,6 +6,7 @@ import { WaterComplex } from './Water/WaterComplex';
 import { WaterContext } from './WaterContext';
 import Water1MNormal from '../../public/water/complex/Water_1_M_Normal.jpg';
 import Water2MNormal from '../../public/water/complex/Water_2_M_Normal.jpg';
+import React from 'react';
 
 type Props = {
   children?: React.ReactNode;
@@ -18,8 +19,8 @@ type Props = {
   flowSpeed?: number;
   dimensions?: number;
   reflectivity?: number;
-  fxDistortionFactor?: number;
-  fxDisplayColorAlpha?: number;
+  refs: React.MutableRefObject<any>;
+  onPointerOver: (event: any) => void;
 };
 
 export default function WaterSurfaceComplex({
@@ -33,8 +34,8 @@ export default function WaterSurfaceComplex({
   flowSpeed = 0.05,
   dimensions = 1024,
   reflectivity = 1.2,
-  fxDistortionFactor = 0.2,
-  fxDisplayColorAlpha = 0.0,
+  refs,
+  onPointerOver,
 }: Props) {
   const ref = useRef<any>();
   const refPointer = useRef(new Vector2(0, 0));
@@ -55,24 +56,14 @@ export default function WaterSurfaceComplex({
       normalMap1: waterNormals2,
       reflectivity: reflectivity,
       encoding: (gl as any).encoding,
-      fxDistortionFactor: fxDistortionFactor,
-      fxDisplayColorAlpha: fxDisplayColorAlpha,
     }),
-    [color, dimensions, flowDirection, flowSpeed, fxDisplayColorAlpha, fxDistortionFactor, gl, reflectivity, scale, waterNormals1, waterNormals2]
+    [color, dimensions, flowDirection, flowSpeed, gl, reflectivity, scale, waterNormals1, waterNormals2]
   );
-
-  //const refPointer = useRef(new Vector2(0, 0));
-
   const waterObj = useMemo(() => new WaterComplex(geom, config), [geom, config]);
-
-  const handlePointerMove = (e: any) => {
-    refPointer.current = e.uv.multiplyScalar(2).subScalar(1);
-    //console.log(e.uv);
-  };
 
   return (
     <WaterContext.Provider value={{ ref, refPointer }}>
-      <primitive ref={ref} onPointerMove={handlePointerMove} object={waterObj} rotation-x={-Math.PI / 2} position={position} />
+      <primitive ref={refs} object={waterObj} rotation-x={-Math.PI / 2} position={position} onPointerOver={onPointerOver} />
 
       {children}
     </WaterContext.Provider>

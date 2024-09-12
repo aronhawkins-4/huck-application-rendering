@@ -4,17 +4,29 @@ Command: npx gltfjsx@6.5.0 public/Solar_Ground.glb
 */
 
 import React from 'react';
-import { useGLTF, useAnimations } from '@react-three/drei';
+import { useGLTF, useAnimations, Plane, useTexture } from '@react-three/drei';
 import SolarGroundFile from '../../public/Solar_Ground.glb';
+import { TextureLoader, RepeatWrapping } from 'three';
+import RockyTextureFile from '../../public/coast_sand_01_diff_1k.jpg';
+import DisplacementTextureFile from '../../public/coast_sand_01_disp_1k.png';
 
 export function SolarGround(props) {
   const group = React.useRef();
   const { nodes, materials, animations } = useGLTF(SolarGroundFile);
   const { actions } = useAnimations(animations, group);
+  const textureLoader = new TextureLoader();
+  const texture = useTexture(RockyTextureFile);
+  texture.repeat.set(200, 200);
+  texture.wrapS = texture.wrapT = RepeatWrapping;
+  const rockyTexture = textureLoader.load(RockyTextureFile);
+  const displacementTexture = textureLoader.load(DisplacementTextureFile);
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={props.refs} {...props} dispose={null}>
       <group name='Scene'>
-        <mesh name='Plane' geometry={nodes.Plane.geometry} material={materials.coast_sand_01} position={[0, 0, 0]} scale={[0.6, 1, 0.6]} />
+        <mesh castShadow receiveShadow name='Plane' geometry={nodes.Plane.geometry} material={materials.coast_sand_01} position={[0, 0, 0]} scale={[6, 10, 6]} />
+        {/* <Plane args={[1000, 1000, 128, 128]} rotation={[-Math.PI / 2, 0, 0]} scale={(10, 0, 10)} castShadow receiveShadow> */}
+        {/* <meshStandardMaterial attach='material' map={texture} displacementMap={displacementTexture} displacementScale={0.1} roughness={1} metalness={0} /> */}
+        {/* </Plane> */}
       </group>
     </group>
   );

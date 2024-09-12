@@ -18,6 +18,7 @@ const Container = () => {
   const canvasRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeScene, setActiveScene] = useState(0);
+  const [hover, setHover] = useState(false);
   useEffect(() => {
     if (activeScene < 0) {
       setActiveScene(2);
@@ -32,7 +33,7 @@ const Container = () => {
   }, [activeScene]);
   return (
     <>
-      <Canvas camera={{ fov: 60, near: 0.1, far: 1000, position: [8, 2, 12] }} ref={canvasRef}>
+      <Canvas camera={{ fov: 60, near: 0.1, far: 1000, position: [8, 2, 12] }} ref={canvasRef} shadows>
         <Suspense
           fallback={
             <Html>
@@ -40,7 +41,7 @@ const Container = () => {
             </Html>
           }
         >
-          <App activeIndex={activeIndex} activeScene={activeScene} />
+          <App activeIndex={activeIndex} activeScene={activeScene} hover={hover} setHover={setHover} />
         </Suspense>
       </Canvas>
       <div className='scene-swiper'>
@@ -224,7 +225,14 @@ const Container = () => {
           </Swiper>
         )}
       </div>
-      <div className='swiper-pagination scene-pagination'>
+      <div
+        className='swiper-pagination scene-pagination'
+        onMouseEnter={() => {
+          if (hover) {
+            setHover(false);
+          }
+        }}
+      >
         <div
           className={`swiper-pagination-bullet ${activeScene === 0 && 'active'}`}
           onClick={() => {
@@ -245,7 +253,14 @@ const Container = () => {
         ></div>
       </div>
 
-      <div className='swiper-navigation'>
+      <div
+        className='swiper-navigation'
+        onMouseEnter={() => {
+          if (hover) {
+            setHover(false);
+          }
+        }}
+      >
         <a
           href='#'
           className='swiper-navigation-arrow swiper-navigation-arrow_prev'
