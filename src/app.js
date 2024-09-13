@@ -35,7 +35,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   const [sunInitialPos, setSunInitialPos] = useState([0, 100, 150]);
   // const [sunPos, setSunPos] = useState([-540, 202, 200]);
   const sunPos = new Vector3(-540, 202, 200);
-  useHelper(dirLight, DirectionalLightHelper, 1, 'red');
+  // useHelper(dirLight, DirectionalLightHelper, 1, 'red');
 
   // useHelper(dirLight, DirectionalLightHelper, 'red');
 
