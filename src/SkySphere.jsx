@@ -4,11 +4,11 @@ import { Canvas, useLoader } from '@react-three/fiber';
 import React from 'react';
 
 // eslint-disable-next-line react/prop-types
-export const SkySphere = ({ file }) => {
-  const colorMap = useLoader(TextureLoader, file);
+export const SkySphere = (props) => {
+  const colorMap = useLoader(TextureLoader, props.file);
   return (
-    <mesh>
-      <sphereGeometry args={[100, 80, 80]} />
+    <mesh {...props}>
+      <sphereGeometry args={[30, 80, 80]} />
       <meshStandardMaterial map={colorMap} side={THREE.BackSide} />
     </mesh>
   );

@@ -10,7 +10,7 @@ import TugboatFile from '../../public/tugboat.glb';
 export function Tugboat(props) {
   const { nodes, materials } = useGLTF(TugboatFile);
   return (
-    <group {...props} dispose={null} ref={props.refs}>
+    <group {...props} dispose={null} ref={props.refs} receiveShadow castShadow>
       <mesh castShadow receiveShadow geometry={nodes.Harbor_Tugboat_geo.geometry} material={materials['1001']} position={[0, 0.044, 0]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={3} />
       <mesh castShadow receiveShadow geometry={nodes.Harbor_Tugboat_Glass_geo.geometry} material={materials['1001']} position={[0, 0.044, 0]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={3} />
     </group>

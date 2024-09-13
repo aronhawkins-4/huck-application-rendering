@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import { PlaneGeometry, Vector2 } from 'three';
+import { PlaneGeometry, RepeatWrapping, Vector2 } from 'three';
 import { useThree } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { WaterComplex } from './Water/WaterComplex';
@@ -42,7 +42,7 @@ export default function WaterSurfaceComplex({
 
   const gl = useThree((state) => state.gl);
   const [waterNormals1, waterNormals2] = useTexture([Water1MNormal, Water2MNormal]);
-  //waterNormals.wrapS = waterNormals.wrapT = RepeatWrapping;
+  waterNormals1.wrapS = waterNormals1.wrapT = RepeatWrapping;
   const geom = useMemo(() => new PlaneGeometry(width, length), [length, width]);
   const config = useMemo(
     () => ({

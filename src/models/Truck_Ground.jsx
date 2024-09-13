@@ -10,8 +10,8 @@ import TruckGroundFile from '../../public/Truck_Ground.glb';
 export function TruckGround(props) {
   const { nodes, materials } = useGLTF(TruckGroundFile);
   return (
-    <group {...props} dispose={null} castShadow receiveShadow ref={props.refs}>
-      <mesh geometry={nodes.Ground.geometry} material={materials.coast_sand_01} position={[0, 0, 0]} rotation={[Math.PI, -1.466, Math.PI]} scale={[1000, 1, 1000]} castShadow receiveShadow />
+    <group {...props} dispose={null} receiveShadow ref={props.refs}>
+      <mesh geometry={nodes.Ground.geometry} material={materials.coast_sand_01} position={[0, 0, 0]} rotation={[Math.PI, -1.466, Math.PI]} scale={[1000, 1, 1000]} receiveShadow />
     </group>
   );
 }
