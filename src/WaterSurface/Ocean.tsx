@@ -12,7 +12,7 @@ export function Ocean(props) {
   const gl = useThree((state) => state.gl);
   const waterNormals = useLoader(THREE.TextureLoader, WaterNormalsFile);
   waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-  const geom = useMemo(() => new THREE.PlaneGeometry(10000, 10000), []);
+  const geom = useMemo(() => new THREE.PlaneGeometry(256, 256), []);
   const config = useMemo(
     () => ({
       textureWidth: 512,

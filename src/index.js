@@ -33,7 +33,7 @@ const Container = () => {
   }, [activeScene]);
   return (
     <>
-      <Canvas camera={{ fov: 60, near: 0.1, far: 10000, position: [8, 2, 12] }} ref={canvasRef} shadows>
+      <Canvas camera={{ fov: 60, near: 0.1, far: 10000, position: [8, 1002, 12] }} ref={canvasRef} shadows>
         <Suspense
           fallback={
             <Html>

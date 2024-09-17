@@ -16,7 +16,7 @@ export function Solar(props) {
     }
   }, [ref]);
   return (
-    <group ref={props.refs} {...props} dispose={null} scale={2} rotation={[0, Math.PI / 3.25, 0]} receiveShadow castShadow>
+    <group ref={props.refs} {...props} dispose={null} scale={2} receiveShadow castShadow>
       <group name='Scene' receiveShadow castShadow>
         <mesh castShadow receiveShadow name='solar_panels002' geometry={nodes.solar_panels002.geometry} material={materials['pbr ']} position={[0.097, 0.002, -0.001]} />
         <mesh

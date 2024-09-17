@@ -139,7 +139,7 @@ body {
 }
 
 .callout-screen:nth-child(2) .callout.solar {
-  top: 75%;
+  top: 68%;
   left: 51%;
 
   & .callout-line-container {
@@ -149,8 +149,8 @@ body {
 }
 
 .callout-screen:nth-child(3) .callout.solar {
-  top: 58%;
-  left: 49%;
+  top: 52%;
+  left: 46%;
 
   & .callout-line-container {
     bottom: 0;
