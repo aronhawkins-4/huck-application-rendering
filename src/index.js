@@ -33,7 +33,7 @@ const Container = () => {
   }, [activeScene]);
   return (
     <>
-      <Canvas camera={{ fov: 60, near: 0.1, far: 1000, position: [8, 2, 12] }} ref={canvasRef} shadows>
+      <Canvas camera={{ fov: 60, near: 0.1, far: 10000, position: [8, 2, 12] }} ref={canvasRef} shadows>
         <Suspense
           fallback={
             <Html>
@@ -232,6 +232,11 @@ const Container = () => {
             setHover(false);
           }
         }}
+        onMouseLeave={() => {
+          if (!hover) {
+            setHover(true);
+          }
+        }}
       >
         <div
           className={`swiper-pagination-bullet ${activeScene === 0 && 'active'}`}
@@ -258,6 +263,11 @@ const Container = () => {
         onMouseEnter={() => {
           if (hover) {
             setHover(false);
+          }
+        }}
+        onMouseLeave={() => {
+          if (!hover) {
+            setHover(true);
           }
         }}
       >

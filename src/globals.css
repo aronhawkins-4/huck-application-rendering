@@ -139,38 +139,38 @@ body {
 }
 
 .callout-screen:nth-child(2) .callout.solar {
-  top: 70%;
+  top: 75%;
   left: 51%;
 
   & .callout-line-container {
     bottom: 0;
-    height: calc(100% + 7vh);
+    height: calc(100% + 4vh);
   }
 }
 
 .callout-screen:nth-child(3) .callout.solar {
-  top: 60%;
-  left: 48%;
+  top: 58%;
+  left: 49%;
 
   & .callout-line-container {
     bottom: 0;
-    height: calc(100% + 30vh);
+    height: calc(100% + 20vh);
   }
 }
 
 .callout-screen:nth-child(2) .callout.boat {
-  top: 75%;
+  bottom: 15vh;
   left: 55%;
 
   & .callout-line-container {
     bottom: 0;
-    height: calc(100% + 23vh);
+    height: calc(100% + 21vh);
   }
 }
 
 .callout-screen:nth-child(3) .callout.boat {
-  top: 20%;
-  left: 27%;
+  top: 30%;
+  left: 35%;
 
   & .callout-line-container {
     top: 0;
@@ -182,7 +182,7 @@ body {
 }
 
 .callout-screen:nth-child(4) .callout.boat {
-  top: 72%;
+  top: 70%;
   left: 40%;
 
   & .callout-line-container {
