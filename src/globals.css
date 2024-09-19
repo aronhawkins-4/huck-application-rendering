@@ -11,6 +11,13 @@ body {
 #leva__root {
   display: none !important;
 }
+.logo {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 4rem;
+  height: auto;
+}
 .content {
   position: fixed;
   width: 100vw;

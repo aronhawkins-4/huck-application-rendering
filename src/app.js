@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { OrbitControls, Float, Sky, useTexture, Sphere } from '@react-three/drei';
+import { OrbitControls, Float, Sky, useTexture, Sphere, useHelper } from '@react-three/drei';
 
 import { Truck } from './models/Truck';
 import { Tugboat } from './models/Tugboat';
@@ -17,6 +17,7 @@ import SolarGroundDisp from '../public/textures/solar/sandstone_cracks_disp_2k.p
 import SolarGroundRough from '../public/textures/solar/sandstone_cracks_arm_2k.jpg';
 import SolarGroundColor from '../public/textures/solar/sandstone_cracks_diff_2k.jpg';
 import SolarGroundNormal from '../public/textures/solar/sandstone_cracks_nor_dx_2k.jpg';
+import { Bolt } from './models/Bolt';
 
 // eslint-disable-next-line react/prop-types
 const App = ({ activeIndex, activeScene, hover, setHover }) => {
@@ -26,12 +27,16 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   const truckRef = useRef(null);
   const boatGroundRef = useRef(null);
   const skyRef = useRef(null);
+  const boltRef = useRef(null);
+  const boltLightRef = useRef(null);
 
   const { camera, gl: renderer, scene } = useThree();
   renderer.toneMappingExposure = 0.05;
   camera.lookAt(0, 1000, 0);
   const pointLight = useRef(null);
   const globeRef = useRef(null);
+
+  useHelper(boltLightRef, THREE.SpotLightHelper);
 
   const [truckGroundColor, truckGroundDisp, solarGroundColor, solarGroundDisp, solarGroundRough, solarGroundAo, solarGroundNormal] = useTexture([
     TruckGroundColor,
@@ -113,6 +118,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   useFrame((state, delta) => {
     // console.log(delta);
     // renderer.toneMappingExposure = controls.exposure;
+    boltRef.current.rotation.y += 0.01;
     switch (activeScene) {
       case 0:
         gsap.to(skyRef.current.material.uniforms.sunPosition.value, {
@@ -153,6 +159,15 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
         switch (activeIndex) {
           case 0:
+            gsap.to(boltRef.current.scale, {
+              x: 0,
+              y: 0,
+              z: 0,
+              duration: 0.25,
+              // delay: 0.1,
+            });
+            boltLightRef.current.intensity = 0;
+
             state.camera.lookAt(cameraTarget);
             gsap.to(cameraTarget, {
               x: 0,
@@ -171,6 +186,29 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             break;
           case 1:
             state.camera.lookAt(cameraTarget);
+            gsap.to(boltRef.current.position, {
+              x: 3.5,
+              y: 1002,
+              z: 6,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: 4,
+              y: 1000,
+              z: 6.5,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: 3.5,
+              y: 1002,
+              z: 6,
+            });
+            boltLightRef.current.intensity = 1000;
 
             gsap.to(cameraTarget, {
               x: 0,
@@ -188,6 +226,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 2:
+            gsap.to(boltRef.current.position, {
+              x: -4,
+              y: 1003.5,
+              z: 1,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: -4,
+              y: 1001,
+              z: 0.5,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: -4,
+              y: 1014,
+              z: 6,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 8;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -206,6 +269,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 3:
+            gsap.to(boltRef.current.position, {
+              x: 5.5,
+              y: 1001.5,
+              z: 3,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: 5.5,
+              y: 1000,
+              z: 3,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: 5.5,
+              y: 1010,
+              z: 3,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 6;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -266,6 +354,15 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
         switch (activeIndex) {
           case 0:
+            gsap.to(boltRef.current.scale, {
+              x: 0,
+              y: 0,
+              z: 0,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            boltLightRef.current.intensity = 0;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -284,6 +381,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 1:
+            gsap.to(boltRef.current.position, {
+              x: 5.5,
+              y: 1003,
+              z: 4,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: 5.5,
+              y: 1000,
+              z: 3,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: 5.5,
+              y: 1010,
+              z: 9,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 8;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -302,6 +424,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 2:
+            gsap.to(boltRef.current.position, {
+              x: -0.5,
+              y: 1002.5,
+              z: 4,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: -0.5,
+              y: 1000,
+              z: 4,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: -0.5,
+              y: 1010,
+              z: 5,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 8;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -320,6 +467,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 3:
+            gsap.to(boltRef.current.position, {
+              x: 5.75,
+              y: 1003,
+              z: 4,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 15,
+              y: 15,
+              z: 15,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: 5.75,
+              y: 1000,
+              z: 4,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: 5.75,
+              y: 1010,
+              z: 5,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 8;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -378,6 +550,16 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
         switch (activeIndex) {
           case 0:
+            gsap.to(boltRef.current.scale, {
+              x: 0,
+              y: 0,
+              z: 0,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+
+            boltLightRef.current.intensity = 0;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -396,6 +578,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 1:
+            gsap.to(boltRef.current.position, {
+              x: 6.5,
+              y: 1002,
+              z: 6,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: 6.5,
+              y: 1000,
+              z: 7,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: 6.5,
+              y: 1010,
+              z: 4,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 6;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -414,6 +621,31 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 2:
+            gsap.to(boltRef.current.position, {
+              x: -1,
+              y: 1003.5,
+              z: 7,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 20,
+              y: 20,
+              z: 20,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            gsap.to(boltLightRef.current.position, {
+              x: -1,
+              y: 1000,
+              z: 8,
+            });
+            gsap.to(boltLightRef.current.target.position, {
+              x: -1.5,
+              y: 1010,
+              z: 6,
+            });
+            boltLightRef.current.intensity = 1000;
+            boltLightRef.current.angle = Math.PI / 8;
+
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -432,6 +664,30 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             break;
           case 3:
+            gsap.to(boltRef.current.position, {
+              x: -1,
+              y: 1003.5,
+              z: 7,
+            });
+            gsap.to(boltRef.current.scale, {
+              x: 0,
+              y: 0,
+              z: 0,
+              duration: 0.5,
+              // delay: 1.5,
+            });
+            // gsap.to(boltLightRef.current.position, {
+            //   x: -1,
+            //   y: 1000,
+            //   z: 8,
+            // });
+            // gsap.to(boltLightRef.current.target.position, {
+            //   x: -1.5,
+            //   y: 1010,
+            //   z: 6,
+            // });
+            boltLightRef.current.intensity = 0;
+            boltLightRef.current.angle = Math.PI / 8;
             state.camera.lookAt(cameraTarget);
 
             gsap.to(cameraTarget, {
@@ -458,7 +714,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
     scene.traverse(function (child) {
       if (child.isMesh) {
         child.receiveShadow = true;
-        child.castShadow = true;
+        // child.castShadow = true;
       }
     });
   }, [scene, activeScene]);
@@ -471,7 +727,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
   return (
     <Fragment>
-      {/* <OrbitControls target={[0, 1000.4, 0]} /> */}
+      <OrbitControls target={[0, 1000.4, 0]} />
       {/* <gridHelper size={2000} args={[1000, 100, 'red', 'green']} /> */}
       <Sky
         scale={10000}
@@ -514,6 +770,18 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
         shadow-mapSize={[1024, 1024]}
         angle={Math.PI / 2}
       />
+      <spotLight
+        color='white'
+        position={[4, 1000, 6.5]}
+        target-position={[3.5, 1002, 6]}
+        intensity={0}
+        ref={boltLightRef}
+        castShadow
+        shadow-bias={-0.0005}
+        shadow-mapSize={[1024, 1024]}
+        angle={Math.PI / 6}
+      />
+      <Bolt position={[3.5, 1002, 6]} scale={0} refs={boltRef} rotation={[0, 0, Math.PI / 4]} />
 
       <group ref={globeRef} receiveShadow castShadow>
         <Truck castShadow receiveShadow onPointerOver={(event) => handleOverIn()} refs={truckRef} position={[3, 1000, 0]} />
