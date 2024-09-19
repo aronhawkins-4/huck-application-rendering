@@ -294,7 +294,7 @@ const Container = () => {
               fill='white'
             />
           </svg>
-          <span>Previous Step</span>
+          <span>Previous</span>
         </a>
         <a
           href='#'
@@ -313,7 +313,7 @@ const Container = () => {
             }
           }}
         >
-          <span>Next Step</span>
+          <span>Next</span>
           <svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'>
             <path
               d='M35.1903 20.7967L36 19.987L35.1903 19.1774L23.1527 7.13975L22.343 6.33008L20.7237 7.94942L21.5334 8.7591L31.6149 18.8406H5.14644H4V21.1335H5.14644H31.6149L21.5334 31.215L20.7237 32.0247L22.343 33.644L23.1527 32.8343L35.1903 20.7967Z'
