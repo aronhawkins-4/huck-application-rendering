@@ -10,11 +10,7 @@ import SolarFile from '../../public/Solar.glb';
 export function Solar(props) {
   const { nodes, materials } = useGLTF(SolarFile);
   const ref = useRef(null);
-  useEffect(() => {
-    if (ref.current) {
-      console.log(ref.current);
-    }
-  }, [ref]);
+
   return (
     <group ref={props.refs} {...props} dispose={null} scale={2} receiveShadow castShadow>
       <group name='Scene' receiveShadow castShadow>

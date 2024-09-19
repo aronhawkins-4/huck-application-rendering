@@ -12,7 +12,6 @@ import BrushedMetalFile from '../../public/textures/brushed_metal.jpg';
 export function Bolt(props) {
   const { nodes, materials } = useGLTF(BoltFile);
   const texture = useTexture(BrushedMetalFile);
-  console.log(texture);
   return (
     <group {...props} dispose={null} ref={props.refs} castShadow={false} receiveShadow>
       <mesh geometry={nodes['BMT-R16-4'].geometry}>

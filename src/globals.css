@@ -8,6 +8,9 @@ html {
 body {
   font-family: 'Inter', sans-serif;
 }
+a {
+  text-decoration: none;
+}
 #leva__root {
   display: none !important;
 }
@@ -191,12 +194,12 @@ body {
 }
 
 .callout-screen:nth-child(4) .callout.boat {
-  top: 70%;
+  top: 65%;
   left: 40%;
 
   & .callout-line-container {
     bottom: 0;
-    height: calc(100% + 19vh);
+    height: calc(100% + 15vh);
   }
 }
 .truck-scene .scene-heading {
@@ -266,6 +269,19 @@ canvas {
   padding: 2rem;
   z-index: 11;
   pointer-events: auto;
+
+  & .swiper-navigation-arrow {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    & span {
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  }
 }
 .swiper-pagination.scene-pagination {
   z-index: 12 !important;
@@ -285,6 +301,27 @@ canvas {
     background-color: #fff;
     opacity: 0.5;
     cursor: pointer;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      color: #ffffff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      bottom: calc(100% + 0.5rem);
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    &:first-child::before {
+      content: '18-Wheeler';
+    }
+    &:nth-child(2)::before {
+      content: 'Tug Boat';
+    }
+    &:last-child::before {
+      content: 'Solar Panel';
+    }
   }
 
   & .swiper-pagination-bullet.active {

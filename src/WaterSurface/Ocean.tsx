@@ -30,11 +30,7 @@ export function Ocean(props) {
     [waterNormals]
   );
   useFrame((state, delta) => (ref.current.material.uniforms.time.value += delta / 4));
-  useEffect(() => {
-    if (ref.current) {
-      console.log(ref.current);
-    }
-  }, []);
+
   return (
     <mesh {...props} ref={props.refs} receiveShadow>
       <water ref={ref} args={[geom, config]} rotation-x={-Math.PI / 2} receiveShadow />
