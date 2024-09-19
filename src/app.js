@@ -23,6 +23,7 @@ import { Bolt } from './models/Bolt';
 const App = ({ activeIndex, activeScene, hover, setHover }) => {
   const [cameraTarget, setCameraTarget] = useState(new Vector3(0, 1002, 0));
   const [dirLightHelper, setDirLightHelper] = useState(null);
+  const [boltLightHelper, setBoltLightHelper] = useState(null);
   const dirLight = useRef(null);
   const truckRef = useRef(null);
   const boatGroundRef = useRef(null);
@@ -36,7 +37,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   const pointLight = useRef(null);
   const globeRef = useRef(null);
 
-  useHelper(boltLightRef, THREE.SpotLightHelper);
+  // useHelper(boltLightRef, THREE.SpotLightHelper);
 
   const [truckGroundColor, truckGroundDisp, solarGroundColor, solarGroundDisp, solarGroundRough, solarGroundAo, solarGroundNormal] = useTexture([
     TruckGroundColor,
@@ -723,11 +724,14 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
     if (dirLight.current) {
       setDirLightHelper(new DirectionalLightHelper(dirLight.current));
     }
+    if (boltLightRef.current) {
+      setBoltLightHelper(new THREE.SpotLightHelper(boltLightRef.current));
+    }
   }, []);
 
   return (
     <Fragment>
-      <OrbitControls target={[0, 1000.4, 0]} />
+      {/* <OrbitControls target={[0, 1000.4, 0]} /> */}
       {/* <gridHelper size={2000} args={[1000, 100, 'red', 'green']} /> */}
       <Sky
         scale={10000}
