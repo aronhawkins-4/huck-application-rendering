@@ -33,7 +33,7 @@ const Container = () => {
   }, [activeScene]);
   return (
     <>
-      <Canvas camera={{ fov: 60, near: 0.1, far: 10000, position: [8, 1002, 12] }} ref={canvasRef} shadows>
+      <Canvas camera={{ fov: 60, near: 0.1, far: 10000, position: [5, 150.25, 5] }} ref={canvasRef} shadows>
         <Suspense
           fallback={
             <Html>
@@ -72,10 +72,23 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>Large Bobtail</h2>
-                  <p>
+                  <ul className='callout-list'>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
+                    <li>High shear strength</li>
+                    <li>High tensile strength</li>
+                    <li>No-break design – enhanced corrosion protection</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li>Five times the fatigue life of conventional fasteners – joints last longer and can often be designed with fewer fasteners to reduce weight</li>
+                    <li>Permanent installation – no retorquing required</li>
+                    <li>Ideal for critical applications like truck chassis</li>
+                  </ul>
+                  {/* <p>
                     Ideal for applications that require vibration resistance and consistent, repeatable clamp, the Huck Bobtail provides five times the fatigue life of conventional fasteners and does
                     not require re-torquing. Bobtail has been used in applications ranging from heavy trucking and trailers to mining applications.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -86,10 +99,24 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>Floortight</h2>
-                  <p>
+                  <ul className='callout-list'>
+                    <li>
+                      Self-countersinking
+                      <ul>
+                        <li>No need to counterbore plywood</li>
+                        <li>No dimpling in plymetal</li>
+                      </ul>
+                    </li>
+                    <li>Does not damage panels when plywood floors need to be replaced</li>
+                    <li>Water and weather resistance to extend the life of plywood floors and cargo</li>
+                    <li>Versatile grip range – one fastener for varying floor thicknesses</li>
+                    <li>Recessed pin break – no grinding the pin to get flush with the floor</li>
+                    <li>Used in wood trailer floors, aluminum floors, buses, subway cars</li>
+                  </ul>
+                  {/* <p>
                     Huck Floortight is an excellent example of how Huck has created problem-solving solutions for decades. The Floortight is a self-countersinking blind fastener that is designed for
                     wood-to-metal applications like the floors of buses.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -100,10 +127,27 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>Magnabulb</h2>
-                  <p>
+                  <ul className='callout-list'>
+                    <li>Single sided installation – makes fastening faster</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li>No need to grind down burrs after hole drilling – undercut fillet helps fastener seat properly</li>
+                    <li>Circle lock to retain pin and improve shear strength</li>
+                    <li>Visual inspection to ensure proper installation</li>
+                    <li>
+                      Large blind side bulb
+                      <ul>
+                        <li>Eliminates pull through</li>
+                        <li>Can be used in thin sheet applications</li>
+                        <li>Works in misaligned, oversized, or out-of-round holes</li>
+                      </ul>
+                    </li>
+                    <li>Ideal for a variety of applications: trailers, buses, seat track, street signs, etc.</li>
+                  </ul>
+                  {/* <p>
                     The Huck Magnabulb is the perfect fastener for joints with thin sheet or low strength materials that still need high tensile and high shear values. It’s quick and easy to install,
                     requiring access to only one side of the application, and it’s consistent blind side bulb resists pull through.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -136,10 +180,29 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>BOM</h2>
-                  <p>
+                  <ul className='callout-list'>
+                    <li>Highest strength blind fastener on the market</li>
+                    <li>Single sided installation – makes fastening faster</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li> Visual inspection of proper installation</li>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>High shear strength</li>
+                    <li>
+                      Broad blind side footprint
+                      <ul>
+                        <li>eliminates fastener pull-through</li>
+                        <li>creates strong joints in weak or thin material</li>
+                      </ul>
+                    </li>
+                    <li>No-break design - enhanced corrosion protection</li>
+                    <li>Installs with battery tools – increases installation speed & allows for greater flexibility during the manufacturing process</li>
+                  </ul>
+                  {/* <p>
                     The Huck BOM is the highest strength structural blind fastener in the world. Proven in applications from military vehicles to rail cars to green energy installations, the BOM
                     provides high joint tightness and tamper resistance while still being fast and easy to install.
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </SwiperSlide>

@@ -9,7 +9,7 @@ import { useGLTF, useTexture } from '@react-three/drei';
 import BoltFile from '../../public/BMT-R16-4-transformed.glb';
 import BrushedMetalFile from '../../public/textures/brushed_metal.jpg';
 
-export function Bolt(props) {
+export function BomtailBolt(props) {
   const { nodes, materials } = useGLTF(BoltFile);
   const texture = useTexture(BrushedMetalFile);
   return (

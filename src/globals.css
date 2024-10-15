@@ -55,7 +55,7 @@ a {
 
     & .callout-content {
       width: 100%;
-      max-width: 30rem;
+      max-width: 40rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
@@ -68,6 +68,47 @@ a {
         font-size: 1.25rem;
         transition: opacity 0.2s ease 1.5s;
         opacity: 0;
+      }
+
+      & .callout-list {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        & ul {
+          list-style-type: none;
+          padding-left: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-top: 0.25rem;
+
+          & li::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.25rem;
+            height: 0.25rem;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+          }
+        }
+
+        & li {
+          position: relative;
+          font-size: 0.875rem;
+          /* line-height: 1; */
+
+          &::before {
+            content: '–';
+            position: absolute;
+            left: -1rem;
+            top: 0;
+          }
+        }
       }
 
       & p {
@@ -115,22 +156,22 @@ a {
 }
 
 .callout-screen:nth-child(2) .callout.truck {
-  top: 67%;
-  left: 37%;
+  top: 49%;
+  left: 39%;
 
   & .callout-line-container {
     bottom: 0;
-    height: calc(100% + 12.5vh);
+    height: calc(100% + 6vh);
   }
 }
 
 .callout-screen:nth-child(3) .callout.truck {
-  top: 46.5%;
+  top: 37%;
   left: 18%;
 
   & .callout-line-container {
     top: 0;
-    height: calc(100% + 9vh);
+    height: calc(100% + 2vh);
     display: flex;
     align-items: flex-end;
   }
@@ -141,11 +182,11 @@ a {
 }
 
 .callout-screen:nth-child(4) .callout.truck {
-  top: 70%;
-  left: 55%;
+  top: 45%;
+  left: 46.25%;
 
   & .callout-line-container {
-    height: calc(100% + 16vh);
+    height: calc(100% + 6vh);
     bottom: 0;
   }
 }
@@ -171,12 +212,11 @@ a {
 }
 
 .callout-screen:nth-child(2) .callout.boat {
-  bottom: 15vh;
-  left: 55%;
-
+  top: 42%;
+  left: 49%;
   & .callout-line-container {
     bottom: 0;
-    height: calc(100% + 21vh);
+    height: calc(100% + 3vh);
   }
 }
 
@@ -227,7 +267,7 @@ canvas {
   pointer-events: none;
 
   & .swiper-wrapper {
-    pointer-events: none;
+    /* pointer-events: none; */
   }
 
   & .swiper-slide {

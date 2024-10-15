@@ -7,7 +7,7 @@ import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import TruckFile from '../../public/Truck.glb';
 
-export function Truck(props) {
+export function TruckGround(props) {
   const { nodes, materials } = useGLTF(TruckFile);
   return (
     <group {...props} dispose={null} rotation={[0, -Math.PI / 1.85, 0]} position={[3, 0, 0]}>
