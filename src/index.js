@@ -85,10 +85,6 @@ const Container = () => {
                     <li>Permanent installation – no retorquing required</li>
                     <li>Ideal for critical applications like truck chassis</li>
                   </ul>
-                  {/* <p>
-                    Ideal for applications that require vibration resistance and consistent, repeatable clamp, the Huck Bobtail provides five times the fatigue life of conventional fasteners and does
-                    not require re-torquing. Bobtail has been used in applications ranging from heavy trucking and trailers to mining applications.
-                  </p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -113,10 +109,6 @@ const Container = () => {
                     <li>Recessed pin break – no grinding the pin to get flush with the floor</li>
                     <li>Used in wood trailer floors, aluminum floors, buses, subway cars</li>
                   </ul>
-                  {/* <p>
-                    Huck Floortight is an excellent example of how Huck has created problem-solving solutions for decades. The Floortight is a self-countersinking blind fastener that is designed for
-                    wood-to-metal applications like the floors of buses.
-                  </p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -144,10 +136,33 @@ const Container = () => {
                     </li>
                     <li>Ideal for a variety of applications: trailers, buses, seat track, street signs, etc.</li>
                   </ul>
-                  {/* <p>
-                    The Huck Magnabulb is the perfect fastener for joints with thin sheet or low strength materials that still need high tensile and high shear values. It’s quick and easy to install,
-                    requiring access to only one side of the application, and it’s consistent blind side bulb resists pull through.
-                  </p> */}
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className='callout-screen'>
+              <div className='callout truck'>
+                <div className='callout-content'>
+                  <div className='callout-line-container'>
+                    <div className='callout-line'></div>
+                  </div>
+                  <h2>Magnabulb</h2>
+                  <ul className='callout-list'>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li>Pin breaks flush to the collar – no need to grind or sand it down</li>
+                    <li>
+                      One SKU covers a wide range of material thickness
+                      <ul>
+                        <li>Reduce human error of picking the wrong fastener out of the bin</li>
+                        <li>Reduce inventory – one SKU vs up to 3 SKUs on a conventional fastener/Huckbolt</li>
+                      </ul>
+                    </li>
+                    <li>Visual inspection of proper installation</li>
+                    <li>Ideal for a wide variety of applications: Grills, shelving/racking, safety appliances (this is used in safety steps/ladders/handles on rail cars)</li>
+                  </ul>
                 </div>
               </div>
             </SwiperSlide>
@@ -179,7 +194,7 @@ const Container = () => {
                   <div className='callout-line-container'>
                     <div className='callout-line'></div>
                   </div>
-                  <h2>BOM</h2>
+                  <h2>BOMtail</h2>
                   <ul className='callout-list'>
                     <li>Highest strength blind fastener on the market</li>
                     <li>Single sided installation – makes fastening faster</li>
@@ -213,10 +228,19 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>Large Bobtail</h2>
-                  <p>
-                    Ideal for applications that require vibration resistance and consistent, repeatable clamp, the Huck Bobtail provides five times the fatigue life of conventional fasteners and does
-                    not require re-torquing. Bobtail has been used in applications ranging from heavy trucking and trailers to mining applications.
-                  </p>
+                  <ul className='callout-list'>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
+                    <li>High shear strength</li>
+                    <li>High tensile strength</li>
+                    <li>No-break design – enhanced corrosion protection</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li>Five times the fatigue life of conventional fasteners – joints last longer and can often be designed with fewer fasteners to reduce weight</li>
+                    <li>Permanent installation – no retorquing required</li>
+                    <li>Ideal for critical applications like truck chassis</li>
+                  </ul>
                 </div>
               </div>
             </SwiperSlide>
@@ -227,10 +251,23 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>Magnagrip</h2>
-                  <p>
-                    One of the most versatile fasteners in the Huck lineup, the Magnagrip has a wide grip range that allows a single fastener to be used in a variety of joint thicknesses. Another
-                    feature that’s unique to Magnagrip is a consistent break that’s flush with the collar, reducing the potential for snagging or scraping.
-                  </p>
+                  <ul className='callout-list'>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li>Pin breaks flush to the collar – no need to grind or sand it down</li>
+                    <li>
+                      One SKU covers a wide range of material thickness
+                      <ul>
+                        <li>Reduce human error of picking the wrong fastener out of the bin</li>
+                        <li>Reduce inventory – one SKU vs up to 3 SKUs on a conventional fastener/Huckbolt</li>
+                      </ul>
+                    </li>
+                    <li>Visual inspection of proper installation</li>
+                    <li>Ideal for a wide variety of applications: Grills, shelving/racking, safety appliances (this is used in safety steps/ladders/handles on rail cars)</li>
+                  </ul>
                 </div>
               </div>
             </SwiperSlide>
@@ -263,10 +300,19 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>Small Bobtail</h2>
-                  <p>
-                    Providing five times the fatigue life of conventional fasteners, the Huck Bobtail is ideal for applications that require vibration resistance and measurable, consistent clamp and
-                    shear values. Quick, easy installation also means less training time and more consistent fastening of joints across the entire application.
-                  </p>
+                  <ul className='callout-list'>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
+                    <li>High shear strength</li>
+                    <li>High tensile strength</li>
+                    <li>No-break design – enhanced corrosion protection</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li>Five times the fatigue life of conventional fasteners – joints last longer and can often be designed with fewer fasteners to reduce weight</li>
+                    <li>Permanent installation – no retorquing required</li>
+                    <li>Ideal for critical applications like truck chassis</li>
+                  </ul>
                 </div>
               </div>
             </SwiperSlide>
@@ -277,29 +323,44 @@ const Container = () => {
                     <div className='callout-line'></div>
                   </div>
                   <h2>BOMtail</h2>
-                  <p>
-                    The next generation of the already excellent Huck BOM, the easy-to-install BOMtail provides high strength and tamper resistance with a pintail-less design that improves corrosion
-                    resistance to its impressive list of benefits.
-                  </p>
+                  <ul className='callout-list'>
+                    <li>Highest strength blind fastener on the market</li>
+                    <li>Single sided installation – makes fastening faster</li>
+                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
+                    <li>Fast assembly – increases throughput</li>
+                    <li> Visual inspection of proper installation</li>
+                    <li>Vibration resistant – delivers joints that will not loosen</li>
+                    <li>Tamper resistant</li>
+                    <li>High shear strength</li>
+                    <li>
+                      Broad blind side footprint
+                      <ul>
+                        <li>eliminates fastener pull-through</li>
+                        <li>creates strong joints in weak or thin material</li>
+                      </ul>
+                    </li>
+                    <li>No-break design - enhanced corrosion protection</li>
+                    <li>Installs with battery tools – increases installation speed & allows for greater flexibility during the manufacturing process</li>
+                  </ul>
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className='callout-screen'></SwiperSlide>
+            {/* <SwiperSlide className='callout-screen'></SwiperSlide> */}
           </Swiper>
         )}
       </div>
       <div
         className='swiper-pagination scene-pagination'
-        onMouseEnter={() => {
-          if (hover) {
-            setHover(false);
-          }
-        }}
-        onMouseLeave={() => {
-          if (!hover) {
-            setHover(true);
-          }
-        }}
+        // onMouseEnter={() => {
+        //   if (hover) {
+        //     setHover(false);
+        //   }
+        // }}
+        // onMouseLeave={() => {
+        //   if (!hover) {
+        //     setHover(true);
+        //   }
+        // }}
       >
         <div
           className={`swiper-pagination-bullet ${activeScene === 0 && 'active'}`}
@@ -321,19 +382,7 @@ const Container = () => {
         ></div>
       </div>
 
-      <div
-        className='swiper-navigation'
-        // onMouseEnter={() => {
-        //   if (hover) {
-        //     setHover(false);
-        //   }
-        // }}
-        // onMouseLeave={() => {
-        //   if (!hover) {
-        //     setHover(true);
-        //   }
-        // }}
-      >
+      <div className='swiper-navigation'>
         <a
           href='#'
           className='swiper-navigation-arrow swiper-navigation-arrow_prev'

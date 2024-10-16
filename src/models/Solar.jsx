@@ -11,7 +11,6 @@ import SolarFile from '../../public/Solar-transformed.glb';
 export function Solar(props) {
   const group = React.useRef();
   const { nodes, materials, animations } = useGLTF(SolarFile);
-  const { actions } = useAnimations(animations, group);
   return (
     <group {...props} dispose={null} ref={props.refs}>
       <group name='Scene'>

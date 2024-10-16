@@ -6,7 +6,7 @@ Files: magnagrip_model.glb [1.1MB] > /Users/aronhawkins/Documents/Projects/huck-
 
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
-import MangagripFile from '../../public/magnagrip_model-transformed.glb';
+import MangagripFile from '../../public/magnagrip-transformed.glb';
 
 export function MagnagripBolt(props) {
   const { nodes, materials } = useGLTF(MangagripFile);

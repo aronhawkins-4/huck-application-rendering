@@ -6,7 +6,7 @@ Files: large_bobtail_model.glb [3.87MB] > /Users/aronhawkins/Documents/Projects/
 
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
-import LargeBobtailFile from '../../public/large_bobtail_model-transformed.glb';
+import LargeBobtailFile from '../../public/large_bobtail-transformed.glb';
 
 export function LargeBobtailBolt(props) {
   const { nodes, materials } = useGLTF(LargeBobtailFile);
