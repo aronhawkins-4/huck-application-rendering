@@ -749,7 +749,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   }, [activeIndex, activeScene]);
   return (
     <Fragment>
-      <OrbitControls target={[0, 0, 0]} />
+      {/* <OrbitControls target={[0, 0, 0]} /> */}
       <Sky
         scale={10000}
         position={[0, 1000, 0]}
