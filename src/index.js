@@ -166,7 +166,7 @@ const Container = () => {
           >
             <SwiperSlide className='callout-screen'>
               <div className='scene-heading'>
-                <h2>Enhanced Marine Performance with Huck Bolts.</h2>
+                <h2>Enhance marine performance with Huck bolts.</h2>
               </div>
             </SwiperSlide>
             <SwiperSlide className='callout-screen'>
