@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
-import { Float, Sky, useTexture, Sphere, useHelper, OrbitControls, Stars, Clouds, Cloud } from '@react-three/drei';
+import { Float, Sky, useTexture, Sphere, useHelper, OrbitControls, Stars, Clouds, Cloud, Html } from '@react-three/drei';
 import { Truck } from './models/Truck';
 import { Tugboat } from './models/Tugboat';
 import { useControls, folder } from 'leva';
@@ -23,6 +23,8 @@ import { FloorTightBolt } from './models/Floortight_model';
 import { MagnagripBolt } from './models/Magnagrip_model';
 import { InstancedMesh } from 'three/src/Three.js';
 import { MeshStandardMaterial } from 'three/src/Three.js';
+import { RoundedRectangle } from './RoundedRectangle';
+import { SmallBobtailBolt } from './models/Small_bobtail_model';
 
 const tempSolars = new THREE.Object3D();
 
@@ -37,6 +39,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   const [magnabulbLight2Helper, setMagnabulbLight2Helper] = useState(null);
   const [magnagripLight1Helper, setMagnagripLight1Helper] = useState(null);
   const [magnagripLight2Helper, setMagnagripLight2Helper] = useState(null);
+  const [magnagripLight5Helper, setMagnagripLight5Helper] = useState(null);
   const [boltLight3Helper, setBoltLight3Helper] = useState(null);
   const [bomTailLight1Helper, setBomTailLight1Helper] = useState(null);
   const [bomTailLight2Helper, setBomTailLight2Helper] = useState(null);
@@ -71,6 +74,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
   const magnagripLightRef1 = useRef(null);
   const magnagripLightRef2 = useRef(null);
+  const magnagripLightRef5 = useRef(null);
   const magnabulbLightRef1 = useRef(null);
   const magnabulbLightRef2 = useRef(null);
   const bomTailLightRef1 = useRef(null);
@@ -84,8 +88,8 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
   const bomTailLightRef3 = useRef(null);
   const bomTailLightRef4 = useRef(null);
 
-  // useHelper(magnagripLightRef1, THREE.SpotLightHelper, 'pink');
-  // useHelper(magnagripLightRef2, THREE.SpotLightHelper, 'teal');
+  // useHelper(bomTailLightRef3, THREE.SpotLightHelper, 'pink');
+  // useHelper(bomTailLightRef4, THREE.SpotLightHelper, 'teal');
 
   const { camera, gl: renderer, scene } = useThree();
   // renderer.toneMappingExposure = 0.05;
@@ -186,71 +190,6 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
     });
   }, [scene, activeScene]);
 
-  // useEffect(() => {
-  //   if (dirLight.current) {
-  //     setDirLightHelper(new DirectionalLightHelper(dirLight.current));
-  //   }
-  //   if (largeBobtailLightRef1.current) {
-  //     setLargeBobtailLight1Helper(new THREE.SpotLightHelper(largeBobtailLightRef1.current));
-  //   }
-  //   if (largeBobtailLightRef2.current) {
-  //     setLargeBobtailLight2Helper(new THREE.SpotLightHelper(largeBobtailLightRef2.current));
-  //   }
-  //   if (floorTightLightRef1.current) {
-  //     setFloorTightLight1Helper(new THREE.SpotLightHelper(floorTightLightRef1.current));
-  //   }
-  //   if (magnagripLightRef1.current) {
-  //     setMagnagripLight1Helper(new THREE.SpotLightHelper(magnagripLightRef1.current));
-  //   }
-  //   if (magnagripLightRef2.current) {
-  //     setMagnagripLight2Helper(new THREE.SpotLightHelper(magnagripLightRef2.current));
-  //   }
-  //   if (bomTailLightRef1.current) {
-  //     setBomTailLight1Helper(new THREE.SpotLightHelper(bomTailLightRef1.current));
-  //   }
-  //   if (bomTailLightRef2.current) {
-  //     setBomTailLight2Helper(new THREE.SpotLightHelper(bomTailLightRef2.current));
-  //   }
-  //   if (largeBobtailLightRef3.current) {
-  //     setLargeBobtailLight3Helper(new THREE.SpotLightHelper(largeBobtailLightRef3.current));
-  //   }
-  //   if (largeBobtailLightRef4.current) {
-  //     setLargeBobtailLight4Helper(new THREE.SpotLightHelper(largeBobtailLightRef4.current));
-  //   }
-  //   if (magnagripLightRef3.current) {
-  //     setMagnagripLight1Helper(new THREE.SpotLightHelper(magnagripLightRef3.current));
-  //   }
-  //   if (magnagripLightRef4.current) {
-  //     setMagnagripLight2Helper(new THREE.SpotLightHelper(magnagripLightRef4.current));
-  //   }
-  //   if (smallBobtailLightRef1.current) {
-  //     setSmallBobtailLight1Helper(new THREE.SpotLightHelper(smallBobtailLightRef1.current));
-  //   }
-  //   if (smallBobtailLightRef2.current) {
-  //     console.log(smallBobtailLightRef2.current);
-  //     setSmallBobtailLight2Helper(new THREE.SpotLightHelper(smallBobtailLightRef2.current));
-  //   }
-  //   if (bomTailLightRef3.current) {
-  //     setBomTailLight3Helper(new THREE.SpotLightHelper(bomTailLightRef3.current));
-  //   }
-  //   if (bomTailLightRef4.current) {
-  //     setBomTailLight4Helper(new THREE.SpotLightHelper(bomTailLightRef4.current));
-  //   }
-  // }, [
-  //   dirLight,
-  //   largeBobtailLightRef1,
-  //   largeBobtailLightRef2,
-  //   floorTightLightRef1,
-  //   magnagripLightRef1,
-  //   magnagripLightRef2,
-  //   bomTailLightRef1,
-  //   bomTailLightRef2,
-  //   magnagripLightRef3,
-  //   magnagripLightRef4,
-  //   bomTailLightRef3,
-  //   bomTailLightRef4,
-  // ]);
-
   useEffect(() => {
     if (cloudRef.current) {
       console.log(cloudRef.current);
@@ -278,6 +217,9 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
     }
     if (magnagripLightRef2.current) {
       setMagnagripLight2Helper(new THREE.SpotLightHelper(magnagripLightRef2.current));
+    }
+    if (magnagripLightRef5.current) {
+      setMagnagripLight5Helper(new THREE.SpotLightHelper(magnagripLightRef5.current));
     }
     if (bomTailLightRef1.current) {
       setBomTailLight1Helper(new THREE.SpotLightHelper(bomTailLightRef1.current));
@@ -329,6 +271,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
       floorTightLightRef1,
       magnagripLightRef1,
       magnagripLightRef2,
+      magnagripLightRef5,
       bomTailLightRef1,
       bomTailLightRef2,
       largeBobtailLightRef3,
@@ -405,15 +348,15 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             break;
           case 1:
             gsap.to(cameraTarget, {
-              x: 0,
-              y: 150,
+              x: 0.35,
+              y: 150.25,
               z: 0,
               duration: 1,
             });
             gsap.to(camera.position, {
-              x: 0.75,
+              x: 0.5,
               y: 150.25,
-              z: 1.15,
+              z: 1,
               duration: 1,
             });
             gsap.to(boltRef1.current.scale, {
@@ -434,15 +377,15 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             break;
           case 2:
             gsap.to(cameraTarget, {
-              x: -0.2,
+              x: -0.1,
               y: 150.275,
               z: 0,
               duration: 1,
             });
             gsap.to(camera.position, {
-              x: -0.2,
+              x: -0.1,
               y: 150.275,
-              z: 1,
+              z: 0.8,
               duration: 1,
             });
             gsap.to(boltRef2.current.scale, {
@@ -460,21 +403,21 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             break;
           case 3:
             gsap.to(cameraTarget, {
-              x: 0.4,
-              y: 150.15,
+              x: 0.3,
+              y: 150.25,
               z: 0,
               duration: 1,
             });
             gsap.to(camera.position, {
-              x: 0.9,
+              x: 0.5,
               y: 150.25,
-              z: 0.75,
+              z: 0.5,
               duration: 1,
             });
             gsap.to(boltRef3.current.scale, {
-              x: 2,
-              y: 2,
-              z: 2,
+              x: 1.5,
+              y: 1.5,
+              z: 1.5,
               duration: 0.5,
               delay: 1.5,
             });
@@ -490,7 +433,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
           case 4:
             gsap.to(cameraTarget, {
               x: 0.4,
-              y: 150.15,
+              y: 150.1,
               z: 0,
               duration: 1,
             });
@@ -501,18 +444,22 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               duration: 1,
             });
             gsap.to(boltRef9.current.scale, {
-              x: 2,
-              y: 2,
-              z: 2,
+              x: 1.5,
+              y: 1.5,
+              z: 1.5,
               duration: 0.5,
               delay: 1.5,
             });
             gsap.to(magnagripLightRef1.current, {
-              intensity: 100,
+              intensity: 1000,
               duration: 0.25,
             });
             gsap.to(magnagripLightRef2.current, {
-              intensity: 100,
+              intensity: 1000,
+              duration: 0.25,
+            });
+            gsap.to(magnagripLightRef5.current, {
+              intensity: 45,
               duration: 0.25,
             });
             break;
@@ -596,25 +543,25 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               delay: 1.5,
             });
             gsap.to(bomTailLightRef1.current, {
-              intensity: 100,
+              intensity: 1,
               duration: 0.25,
             });
             gsap.to(bomTailLightRef2.current, {
-              intensity: 50,
+              intensity: 1,
               duration: 0.25,
             });
             break;
           case 2:
             gsap.to(cameraTarget, {
-              x: 0,
-              y: 151,
-              z: 0.875,
+              x: -0.1,
+              y: 151.15,
+              z: 0.925,
               duration: 1,
             });
             gsap.to(camera.position, {
-              x: 0.25,
+              x: 0,
               y: 151.25,
-              z: 1.25,
+              z: 1,
               duration: 1,
             });
             gsap.to(boltRef5.current.scale, {
@@ -625,11 +572,11 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               delay: 1.5,
             });
             gsap.to(largeBobtailLightRef3.current, {
-              intensity: 100,
+              intensity: 20,
               duration: 0.25,
             });
             gsap.to(largeBobtailLightRef4.current, {
-              intensity: 50,
+              intensity: 10,
               duration: 0.25,
             });
             break;
@@ -641,24 +588,24 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               duration: 1,
             });
             gsap.to(camera.position, {
-              x: 1,
-              y: 151,
-              z: 0,
+              x: 0.7,
+              y: 150.9,
+              z: -0.1,
               duration: 1,
             });
             gsap.to(boltRef6.current.scale, {
-              x: 2,
-              y: 2,
-              z: 2,
+              x: 1,
+              y: 1,
+              z: 1,
               duration: 0.5,
               delay: 1.5,
             });
             gsap.to(magnagripLightRef3.current, {
-              intensity: 100,
+              intensity: 50,
               duration: 0.25,
             });
             gsap.to(magnagripLightRef4.current, {
-              intensity: 50,
+              intensity: 20,
               duration: 0.25,
             });
             break;
@@ -737,19 +684,19 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               duration: 1,
             });
             gsap.to(boltRef7.current.scale, {
-              x: 1.5,
-              y: 1.5,
-              z: 1.5,
+              x: 2,
+              y: 2,
+              z: 2,
               duration: 0.5,
               delay: 1.5,
             });
 
             gsap.to(smallBobtailLightRef1.current, {
-              intensity: 100,
+              intensity: 20,
               duration: 0.25,
             });
             gsap.to(smallBobtailLightRef2.current, {
-              intensity: 200,
+              intensity: 30,
               duration: 0.25,
             });
             break;
@@ -767,9 +714,9 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               duration: 1,
             });
             gsap.to(boltRef8.current.scale, {
-              x: 1.5,
-              y: 1.5,
-              z: 1.5,
+              x: 1,
+              y: 1,
+              z: 1,
               duration: 0.5,
               delay: 1.5,
             });
@@ -855,14 +802,30 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
 
             <Truck castShadow receiveShadow refs={truckRef} position={[0.75, 149.985, 0]} rotation={[0, -Math.PI / 2, 0]} scale={0.1} />
 
-            <LargeBobtailBolt position={[0.4, 150.275, 0.6]} refs={boltRef1} rotation={[0, 0, -Math.PI / 4]} />
-            <FloorTightBolt position={[-0.2, 150.35, 0.5]} refs={boltRef2} rotation={[0, 0, Math.PI / 4]} />
-            <MagnagripBolt position={[0.75, 150.3, 0.3]} refs={boltRef3} rotation={[0, 0, -Math.PI / 4]} />
-            <MagnagripBolt position={[1, 150.15, 0.075]} refs={boltRef9} rotation={[0, 0, -Math.PI / 4]} />
+            <LargeBobtailBolt position={[0.54, 150.275, 0.5]} refs={boltRef1} rotation={[0, 0, -Math.PI / 4]} />
+            {/* <Html
+              position={[0.5, 150.275, 0.5]}
+              // geometry={<RoundedRectangle width={0.5} height={0.5} radius={0.5} />}
+              // geometry={<planeGeometry args={[0.5, 0.5]} />}
+              // material={<meshBasicMaterial color={'#000000'} opacity={0.75} transparent />}
+              wrapperClass='truck-callout-1'
+              transform
+              occlude='blending'
+              // rotation={[0, Math.PI / 2, 0]}
+            >
+              <div className='callout-content text-white' style={{ width: '300px', height: '500px', backgroundColor: '#0000ff' }}>
+                <h2>Large Bobtail</h2>
+              </div>
+            </Html> */}
+
+            <FloorTightBolt position={[-0.28, 150.27, 0.4]} refs={boltRef2} rotation={[0, 0, Math.PI / 4]} />
+            <MagnagripBolt position={[0.45, 150.235, 0.3]} refs={boltRef3} rotation={[0, 0, -Math.PI / 4]} />
+            <MagnagripBolt position={[1, 150.15, 0.055]} refs={boltRef9} rotation={[0, 0, -Math.PI / 4]} />
+
             <spotLight
               color='white'
-              position={[0.5, 150, 0.7]}
-              target-position={[0.4, 150.275, 0.6]}
+              position={[0.55, 150, 0.7]}
+              target-position={[0.575, 150.275, 0.5]}
               ref={largeBobtailLightRef1}
               castShadow
               decay={0}
@@ -874,8 +837,8 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             />
             <spotLight
               color='white'
-              position={[0.5, 150.5, 0.7]}
-              target-position={[0.4, 150.275, 0.6]}
+              position={[0.65, 150.5, 0.7]}
+              target-position={[0.575, 150.275, 0.5]}
               castShadow
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
@@ -888,7 +851,7 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             <spotLight
               color='white'
               position={[-0.2, 150.15, 0.7]}
-              target-position={[-0.2, 150.275, 0.6]}
+              target-position={[-0.28, 150.27, 0.4]}
               ref={floorTightLightRef1}
               castShadow
               decay={0}
@@ -900,54 +863,68 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             />
             <spotLight
               color='white'
-              position={[0.75, 150.15, 0.4]}
-              target-position={[0.75, 150.3, 0.3]}
+              position={[0.4, 150.1, 0.3]}
+              target-position={[0.45, 150.235, 0.3]}
               ref={magnabulbLightRef1}
               castShadow
               decay={0}
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              angle={Math.PI / 4}
-              distance={0.3}
+              angle={Math.PI / 6}
+              distance={0.2}
               name='Magnabulb Light 1'
             />
             <spotLight
               color='white'
-              position={[0.75, 150.5, 0.4]}
-              target-position={[0.75, 150.3, 0.3]}
+              position={[0.425, 150.35, 0.325]}
+              target-position={[0.45, 150.235, 0.3]}
               ref={magnabulbLightRef2}
               castShadow
               decay={0}
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              angle={Math.PI / 4}
-              distance={0.35}
+              angle={Math.PI / 8}
+              distance={0.3}
               name='Magnabulb Light 2'
             />
-            <directionalLight
+            <spotLight
               color='white'
-              position={[1.2, 150.075, 0.05]}
-              target-position={[0.75, 150.25, 0.1]}
+              position={[1.05, 150.075, 0.05]}
+              target-position={[1, 150.15, 0.055]}
               ref={magnagripLightRef1}
               castShadow
               decay={0}
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              // angle={Math.PI / 6}
-              distance={0.75}
+              angle={Math.PI / 6}
+              distance={0.2}
               name='Magnagrip Light 1'
             />
             <spotLight
               color='white'
-              position={[1.25, 150.35, 0.05]}
-              target-position={[0.5, 149.75, 0.1]}
+              position={[1.1, 150.15, 0.05]}
+              target-position={[1, 150.15, 0.055]}
               ref={magnagripLightRef2}
               castShadow
               decay={0}
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              angle={Math.PI / 3}
-              distance={0.8}
+              angle={Math.PI / 5}
+              distance={0.15}
+              name='Magnagrip Light 2'
+            />
+            <directionalLight
+              color='white'
+              position={[3, 151.15, 0.05]}
+              target-position={[1, 150.15, 0.055]}
+              ref={magnagripLightRef5}
+              castShadow
+              decay={0}
+              shadow-bias={-0.0005}
+              shadow-mapSize={[1024, 1024]}
+              // angle={Math.PI / 3}
+              distance={50}
+              intensity={45}
               name='Magnagrip Light 2'
             />
           </>
@@ -958,13 +935,13 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               <Tugboat />
             </Float>
 
-            <BomtailBolt position={[0.7, -0.25, -151.65]} refs={boltRef4} rotation={[Math.PI / 2, 0, -Math.PI / 4]} />
-            <LargeBobtailBolt position={[0, 0.75, -150.85]} refs={boltRef5} rotation={[Math.PI / 2, 0, Math.PI / 4]} />
-            <MagnagripBolt position={[0.7, -0.25, -150.975]} refs={boltRef6} rotation={[-Math.PI / 2, 0, -Math.PI / 4]} />
+            <BomtailBolt position={[0.8, 0.1, -151.475]} refs={boltRef4} rotation={[Math.PI / 2, 0, -Math.PI / 4]} />
+            <LargeBobtailBolt position={[-0.45, 0.85, -151]} refs={boltRef5} rotation={[Math.PI / 2, 0, Math.PI / 4]} />
+            <MagnagripBolt position={[0.615, -0.2, -150.88]} refs={boltRef6} rotation={[-Math.PI / 2, 0, -Math.PI / 4]} />
             <spotLight
               color='white'
-              position={[0.8, 151.25, 0]}
-              target-position={[0.7, 151.65, -0.25]}
+              position={[0.9, 0.1, -151.35]}
+              target-position={[0.8, 151.475, 0.1]}
               ref={bomTailLightRef1}
               castShadow
               shadow-bias={-0.0005}
@@ -975,8 +952,8 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             />
             <spotLight
               color='white'
-              position={[0.8, 152, -0.4]}
-              target-position={[0.7, 151.65, -0.25]}
+              position={[0.9, 0.1, -151.75]}
+              target-position={[0.8, 151.475, 0.1]}
               ref={bomTailLightRef2}
               castShadow
               shadow-bias={-0.0005}
@@ -987,20 +964,20 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             />
             <spotLight
               color='white'
-              position={[0.125, 0.875, -150.5]}
-              target-position={[0, 150.85, 0.75]}
+              position={[-0.35, 0.875, -150.875]}
+              target-position={[-0.45, 151, 0.85]}
               ref={largeBobtailLightRef3}
               castShadow
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              angle={Math.PI / 8}
+              angle={Math.PI / 6}
               name='Large Bobtail Light 3'
               distance={0.5}
             />
             <spotLight
               color='white'
-              position={[0.125, 0.875, -151.125]}
-              target-position={[0, 150.85, 0.75]}
+              position={[-0.35, 0.875, -151.25]}
+              target-position={[-0.45, 151, 0.85]}
               ref={largeBobtailLightRef4}
               castShadow
               shadow-bias={-0.0005}
@@ -1011,27 +988,27 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             />
             <spotLight
               color='white'
-              position={[0.875, -0.15, -150.75]}
-              target-position={[0.225, 152, -0.45]}
+              position={[0.65, -0.15, -150.75]}
+              target-position={[0.615, 150.88, -0.2]}
               ref={magnagripLightRef3}
               castShadow
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              angle={Math.PI / 8}
+              angle={Math.PI / 10}
               name='Magnagrip Light 3'
-              distance={0.5}
+              distance={0.2}
             />
             <spotLight
               color='white'
-              position={[0.875, -0.15, -151.25]}
-              target-position={[0.225, 150.25, -0.45]}
+              position={[0.75, -0.15, -151]}
+              target-position={[0.615, 150.88, -0.2]}
               ref={magnagripLightRef4}
               castShadow
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
               angle={Math.PI / 8}
               name='Magnagrip Light 4'
-              distance={0.5}
+              distance={0.25}
             />
           </>
         )}
@@ -1048,12 +1025,12 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             <Solar position={[0.25, -149.93, 1.25]} rotation={[Math.PI, Math.PI / 3.25, 0]} scale={0.15} />
             <Solar position={[0.65, -149.93, 0.95]} rotation={[Math.PI, Math.PI / 3.25, 0]} scale={0.15} />
 
-            <LargeBobtailBolt position={[0, -150.15, 0.125]} refs={boltRef7} rotation={[0, 0, Math.PI / 4]} />
-            <BomtailBolt position={[0, -150.2, 0.1]} refs={boltRef8} rotation={[0, 0, Math.PI / 4]} />
+            <SmallBobtailBolt position={[-0.1, -150.165, 0]} refs={boltRef7} rotation={[0, 0, Math.PI / 4]} />
+            <BomtailBolt position={[-0.1, -150.21, 0]} refs={boltRef8} rotation={[0, 0, Math.PI / 4]} />
             <spotLight
               color='white'
               position={[-0.1, -150.05, -0.05]}
-              target-position={[0.65, 150.75, -1.2]}
+              target-position={[-0.1, 150.165, 0]}
               intensity={0}
               ref={smallBobtailLightRef1}
               castShadow
@@ -1061,12 +1038,12 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
               shadow-mapSize={[1024, 1024]}
               angle={Math.PI / 8}
               name='Small Bobtail Light 1'
-              distance={0.25}
+              distance={0.2}
             />
             <spotLight
               color='white'
-              position={[-0.15, -150.25, 0.05]}
-              target-position={[0.2, 150, -0.2]}
+              position={[-0.2, -150.25, -0.1]}
+              target-position={[-0.1, 150.165, 0]}
               ref={smallBobtailLightRef2}
               castShadow
               shadow-bias={-0.0005}
@@ -1077,26 +1054,26 @@ const App = ({ activeIndex, activeScene, hover, setHover }) => {
             />
             <spotLight
               color='white'
-              position={[-0.1, -150.05, 0.1]}
-              target-position={[0.65, 151.2, -0.15]}
+              position={[-0.1, -150.1, 0]}
+              target-position={[-0.1, 150.21, 0]}
               ref={bomTailLightRef3}
               castShadow
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
               angle={Math.PI / 10}
               name='BOMtail Light 3'
-              distance={0.225}
+              distance={0.15}
             />
             <spotLight
               color='white'
-              position={[-0.1, -150.3, 0.1]}
-              target-position={[0.1, 150.1, -0.1]}
+              position={[-0.1, -150.3, 0]}
+              target-position={[-0.1, 150.21, 0]}
               ref={bomTailLightRef4}
               castShadow
               shadow-bias={-0.0005}
               shadow-mapSize={[1024, 1024]}
-              angle={Math.PI / 8}
-              name='BOMtail Light 3'
+              angle={Math.PI / 6}
+              name='BOMtail Light 4'
               distance={0.2}
             />
           </>

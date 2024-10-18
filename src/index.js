@@ -73,17 +73,16 @@ const Container = () => {
                   </div>
                   <h2>Large Bobtail</h2>
                   <ul className='callout-list'>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
-                    <li>High shear strength</li>
-                    <li>High tensile strength</li>
-                    <li>No-break design – enhanced corrosion protection</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li>Five times the fatigue life of conventional fasteners – joints last longer and can often be designed with fewer fasteners to reduce weight</li>
-                    <li>Permanent installation – no retorquing required</li>
-                    <li>Ideal for critical applications like truck chassis</li>
+                    <li>Vibration-resistant design keeps joints secure and tight</li>
+                    <li>Tamper-proof for added protection</li>
+                    <li>Consistent clamping prevents joints from slipping</li>
+                    <li>Strong shear and tensile performance</li>
+                    <li>Corrosion-resistant for long-lasting durability</li>
+                    <li>Easy to install with no special training needed</li>
+                    <li>Fast assembly improves efficiency</li>
+                    <li>Lasts 5x longer than standard fasteners</li>
+                    <li>Permanent installation with no retightening required</li>
+                    <li>Ideal for truck chassis applications</li>
                   </ul>
                 </div>
               </div>
@@ -96,18 +95,12 @@ const Container = () => {
                   </div>
                   <h2>Floortight</h2>
                   <ul className='callout-list'>
-                    <li>
-                      Self-countersinking
-                      <ul>
-                        <li>No need to counterbore plywood</li>
-                        <li>No dimpling in plymetal</li>
-                      </ul>
-                    </li>
-                    <li>Does not damage panels when plywood floors need to be replaced</li>
-                    <li>Water and weather resistance to extend the life of plywood floors and cargo</li>
-                    <li>Versatile grip range – one fastener for varying floor thicknesses</li>
-                    <li>Recessed pin break – no grinding the pin to get flush with the floor</li>
-                    <li>Used in wood trailer floors, aluminum floors, buses, subway cars</li>
+                    <li>Self-countersinking eliminates the need for counterboring plywood</li>
+                    <li>Protects panels during replacements without damage</li>
+                    <li>Water-resistant to extend the life of floors and cargo</li>
+                    <li>Versatile grip fits different floor thicknesses</li>
+                    <li>Recessed pin breaks, no grinding required</li>
+                    <li>Suitable for wood, aluminum floors, buses, and subway cars</li>
                   </ul>
                 </div>
               </div>
@@ -120,21 +113,15 @@ const Container = () => {
                   </div>
                   <h2>Magnabulb</h2>
                   <ul className='callout-list'>
-                    <li>Single sided installation – makes fastening faster</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li>No need to grind down burrs after hole drilling – undercut fillet helps fastener seat properly</li>
-                    <li>Circle lock to retain pin and improve shear strength</li>
-                    <li>Visual inspection to ensure proper installation</li>
-                    <li>
-                      Large blind side bulb
-                      <ul>
-                        <li>Eliminates pull through</li>
-                        <li>Can be used in thin sheet applications</li>
-                        <li>Works in misaligned, oversized, or out-of-round holes</li>
-                      </ul>
-                    </li>
-                    <li>Ideal for a variety of applications: trailers, buses, seat track, street signs, etc.</li>
+                    <li>Single-sided installation speeds up fastening</li>
+                    <li>Easy to install, no special training needed</li>
+                    <li>Fast assembly boosts throughput</li>
+                    <li>No need to grind post-drill burrs</li>
+                    <li>Circle lock increases shear strength</li>
+                    <li>Visual inspections ensure proper installation</li>
+                    <li>Large blind bulb prevents pull-through</li>
+                    <li>Works with thin sheets and misaligned holes</li>
+                    <li>Ideal for trailers, buses, seats, and street signs</li>
                   </ul>
                 </div>
               </div>
@@ -145,23 +132,17 @@ const Container = () => {
                   <div className='callout-line-container'>
                     <div className='callout-line'></div>
                   </div>
-                  <h2>Magnabulb</h2>
+                  <h2>Magnagrip</h2>
                   <ul className='callout-list'>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li>Pin breaks flush to the collar – no need to grind or sand it down</li>
-                    <li>
-                      One SKU covers a wide range of material thickness
-                      <ul>
-                        <li>Reduce human error of picking the wrong fastener out of the bin</li>
-                        <li>Reduce inventory – one SKU vs up to 3 SKUs on a conventional fastener/Huckbolt</li>
-                      </ul>
-                    </li>
-                    <li>Visual inspection of proper installation</li>
-                    <li>Ideal for a wide variety of applications: Grills, shelving/racking, safety appliances (this is used in safety steps/ladders/handles on rail cars)</li>
+                    <li>Vibration-resistant joints stay tight without loosening</li>
+                    <li>Tamper-proof design enhances safety</li>
+                    <li>Consistent clamping prevents slippage</li>
+                    <li>Fast assembly improves workflow</li>
+                    <li>Flush pin breaks create a smooth surface</li>
+                    <li>Single SKU accommodates multiple material thicknesses</li>
+                    <li>Reduces human error with one SKU</li>
+                    <li>Minimizes inventory needs compared to using three SKUs</li>
+                    <li>Ideal for grills, shelving, and safety applications</li>
                   </ul>
                 </div>
               </div>
@@ -196,28 +177,18 @@ const Container = () => {
                   </div>
                   <h2>BOMtail</h2>
                   <ul className='callout-list'>
-                    <li>Highest strength blind fastener on the market</li>
-                    <li>Single sided installation – makes fastening faster</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li> Visual inspection of proper installation</li>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>High shear strength</li>
-                    <li>
-                      Broad blind side footprint
-                      <ul>
-                        <li>eliminates fastener pull-through</li>
-                        <li>creates strong joints in weak or thin material</li>
-                      </ul>
-                    </li>
-                    <li>No-break design - enhanced corrosion protection</li>
-                    <li>Installs with battery tools – increases installation speed & allows for greater flexibility during the manufacturing process</li>
+                    <li>Strongest blind fastener available on the market</li>
+                    <li>Single-sided installation for faster fastening</li>
+                    <li>Easy installation with no special training required</li>
+                    <li>Fast assembly increases throughput</li>
+                    <li>Vibration-resistant to prevent joints from loosening</li>
+                    <li>Tamper-resistant for added security</li>
+                    <li>High shear strength ensures durability</li>
+                    <li>Broad blind side footprint prevents pull-through</li>
+                    <li>Creates strong joints in weak or thin materials</li>
+                    <li>Break design enhances corrosion protection</li>
+                    <li>Installs with standard tools, increasing speed and flexibility</li>
                   </ul>
-                  {/* <p>
-                    The Huck BOM is the highest strength structural blind fastener in the world. Proven in applications from military vehicles to rail cars to green energy installations, the BOM
-                    provides high joint tightness and tamper resistance while still being fast and easy to install.
-                  </p> */}
                 </div>
               </div>
             </SwiperSlide>
@@ -229,17 +200,16 @@ const Container = () => {
                   </div>
                   <h2>Large Bobtail</h2>
                   <ul className='callout-list'>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
-                    <li>High shear strength</li>
-                    <li>High tensile strength</li>
-                    <li>No-break design – enhanced corrosion protection</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li>Five times the fatigue life of conventional fasteners – joints last longer and can often be designed with fewer fasteners to reduce weight</li>
-                    <li>Permanent installation – no retorquing required</li>
-                    <li>Ideal for critical applications like truck chassis</li>
+                    <li>Vibration-resistant design keeps joints secure and tight</li>
+                    <li>Tamper-proof for added protection</li>
+                    <li>Consistent clamping prevents joints from slipping</li>
+                    <li>Strong shear and tensile performance</li>
+                    <li>Corrosion-resistant for long-lasting durability</li>
+                    <li>Easy to install with no special training needed</li>
+                    <li>Fast assembly improves efficiency</li>
+                    <li>Lasts 5x longer than standard fasteners</li>
+                    <li>Permanent installation with no retightening required</li>
+                    <li>Ideal for truck chassis applications</li>
                   </ul>
                 </div>
               </div>
@@ -252,21 +222,15 @@ const Container = () => {
                   </div>
                   <h2>Magnagrip</h2>
                   <ul className='callout-list'>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li>Pin breaks flush to the collar – no need to grind or sand it down</li>
-                    <li>
-                      One SKU covers a wide range of material thickness
-                      <ul>
-                        <li>Reduce human error of picking the wrong fastener out of the bin</li>
-                        <li>Reduce inventory – one SKU vs up to 3 SKUs on a conventional fastener/Huckbolt</li>
-                      </ul>
-                    </li>
-                    <li>Visual inspection of proper installation</li>
-                    <li>Ideal for a wide variety of applications: Grills, shelving/racking, safety appliances (this is used in safety steps/ladders/handles on rail cars)</li>
+                    <li>Vibration-resistant joints stay tight without loosening</li>
+                    <li>Tamper-proof design enhances safety</li>
+                    <li>Consistent clamping prevents slippage</li>
+                    <li>Fast assembly improves workflow</li>
+                    <li>Flush pin breaks create a smooth surface</li>
+                    <li>Single SKU accommodates multiple material thicknesses</li>
+                    <li>Reduces human error with one SKU</li>
+                    <li>Minimizes inventory needs compared to using three SKUs</li>
+                    <li>Ideal for grills, shelving, and safety applications</li>
                   </ul>
                 </div>
               </div>
@@ -301,17 +265,16 @@ const Container = () => {
                   </div>
                   <h2>Small Bobtail</h2>
                   <ul className='callout-list'>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>Consistent, repeatable clamp – delivers joints that will not slip</li>
-                    <li>High shear strength</li>
-                    <li>High tensile strength</li>
-                    <li>No-break design – enhanced corrosion protection</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li>Five times the fatigue life of conventional fasteners – joints last longer and can often be designed with fewer fasteners to reduce weight</li>
-                    <li>Permanent installation – no retorquing required</li>
-                    <li>Ideal for critical applications like truck chassis</li>
+                    <li>Vibration-resistant to prevent joint loosening</li>
+                    <li>Tamper-resistant for added security</li>
+                    <li>Consistent clamping prevents slipping</li>
+                    <li>High shear and tensile strength for durability</li>
+                    <li>No-break design offers enhanced corrosion protection</li>
+                    <li>Easy installation with no special training required</li>
+                    <li>Fast assembly increases productivity</li>
+                    <li>5x longer fatigue life than standard fasteners</li>
+                    <li>Permanent installation, no retorquing needed</li>
+                    <li>Ideal for applications like truck chassis</li>
                   </ul>
                 </div>
               </div>
@@ -324,23 +287,17 @@ const Container = () => {
                   </div>
                   <h2>BOMtail</h2>
                   <ul className='callout-list'>
-                    <li>Highest strength blind fastener on the market</li>
-                    <li>Single sided installation – makes fastening faster</li>
-                    <li>Easy, consistent installation – no special training or certifications required for installers</li>
-                    <li>Fast assembly – increases throughput</li>
-                    <li> Visual inspection of proper installation</li>
-                    <li>Vibration resistant – delivers joints that will not loosen</li>
-                    <li>Tamper resistant</li>
-                    <li>High shear strength</li>
-                    <li>
-                      Broad blind side footprint
-                      <ul>
-                        <li>eliminates fastener pull-through</li>
-                        <li>creates strong joints in weak or thin material</li>
-                      </ul>
-                    </li>
-                    <li>No-break design - enhanced corrosion protection</li>
-                    <li>Installs with battery tools – increases installation speed & allows for greater flexibility during the manufacturing process</li>
+                    <li>Strongest blind fastener available on the market</li>
+                    <li>Single-sided installation for faster fastening</li>
+                    <li>Easy installation with no special training required</li>
+                    <li>Fast assembly increases throughput</li>
+                    <li>Vibration-resistant to prevent joints from loosening</li>
+                    <li>Tamper-resistant for added security</li>
+                    <li>High shear strength ensures durability</li>
+                    <li>Broad blind side footprint prevents pull-through</li>
+                    <li>Creates strong joints in weak or thin materials</li>
+                    <li>Break design enhances corrosion protection</li>
+                    <li>Installs with standard tools, increasing speed and flexibility</li>
                   </ul>
                 </div>
               </div>

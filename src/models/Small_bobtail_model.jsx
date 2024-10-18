@@ -4,17 +4,18 @@ Command: npx gltfjsx@6.5.2 small_bobtail_model.glb --transform
 Files: small_bobtail_model.glb [3.77MB] > /Users/aronhawkins/Documents/Projects/huck-application-rendering/small_bobtail_model-transformed.glb [348.88KB] (91%)
 */
 
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import React from 'react';
+import { useGLTF } from '@react-three/drei';
+import SmallBobtailFile from '../../public/small_bobtail_model-transformed.glb';
 
-export function Model(props) {
-  const { nodes, materials } = useGLTF('/small_bobtail_model-transformed.glb')
+export function SmallBobtailBolt(props) {
+  const { nodes, materials } = useGLTF(SmallBobtailFile);
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={props.refs}>
       <mesh geometry={nodes['BT-R8-6_BT-(_)8-6001'].geometry} material={materials['Dark metal']} />
       <mesh geometry={nodes['BTC_BTC2-(_)8001'].geometry} material={materials.Brass} rotation={[0.157, 0, 0]} />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/small_bobtail_model-transformed.glb')
+useGLTF.preload(SmallBobtailFile);
